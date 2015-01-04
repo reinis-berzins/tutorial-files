@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>3D Button</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <style type="text/css">
+        
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background-color: #e0e0e0;
+                font-family: Arial, sans-serif;
+            }
+            
+            .button {
+                display: block;
+                width: 180px;
+                height: 60px;
+                position: relative;
+                border: 2px solid #04a;
+                border-radius: 5px;
+                margin: 200px auto;
+                background-color: #06c;
+            }
+            .button .content {
+                display: block;
+                position: absolute;
+                bottom: 6px;
+                width: 100%;
+                height: 100%;
+                line-height: 60px;
+                text-align: center;
+                background-color: #09f;
+                color: #fff;
+                text-transform: uppercase;
+                box-shadow: 0 6px 0 #06c;
+                border-radius: 5px;
+                transition: all 0.1s linear;
+            }
+            
+            .button:active .content {
+                bottom: 0;
+                box-shadow: 0 0 0 #06c;
+            }
+            
+        </style>
+        
+	</head>
+	<body>
+        
+        <a href="#" class="button">
+            <span class="content">Click me!</span>
+        </a>
+        
+        
+        
+        
+        
+        
+        
+	</body>
+</html>
