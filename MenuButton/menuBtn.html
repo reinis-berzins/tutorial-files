@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Menu Button</title>
+
+		<style type="text/css">
+            
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .menu-btn {
+                display: block;
+                width: 48px;
+                height: 36px;
+                margin: 20% auto 0 auto;
+            }
+            
+            .menu-btn-block {
+                width: 100%;
+                height: 6px;
+                background-color: #09f;
+                border-radius: 3px;
+                transform-origin: 0 50%;
+                transition: transform 0.3s ease;
+            }
+            
+            .menu-btn-block.middle {
+                margin: 9px 0;
+            }
+            
+            .menu-btn-block.top.active {
+                transform: rotate(38.682deg);
+            }
+            .menu-btn-block.middle.active {
+                transform: scale(0);
+            }
+            .menu-btn-block.bottom.active {
+                transform: rotate(-38.682deg);
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+		</style>
+		
+		
+	</head>
+	<body>
+        
+        
+        <a href="#" class="menu-btn">
+            <div class="menu-btn-block top"></div>
+            <div class="menu-btn-block middle"></div>
+            <div class="menu-btn-block bottom"></div>
+        </a>
+        
+        
+        
+        
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script type="text/javascript">
+            
+            (function() {
+                
+                var menuBtn = $('a.menu-btn'),
+                    menuBtnBlock = menuBtn.find('div.menu-btn-block');
+                
+                menuBtn.on('click', function() {
+                    menuBtnBlock.toggleClass('active');
+                });
+                
+                
+                
+            })();
+            
+		</script>
+
+
+	</body>
+</html>
