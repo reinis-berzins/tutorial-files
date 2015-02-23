@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Slide Down Page</title>
+        <style type="text/css">
+            
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .btn {
+                display: inline-block;
+                text-decoration: none;
+                font-family: Open Sans, sans-serif;
+                background-color: #09f;
+                color: #fff;
+                padding: 5px 20px;
+            }
+            
+            .slide-down-page {
+                position: absolute;
+                width: 100%;
+                box-sizing: content-box;
+                background-color: #666;
+                text-align: right;
+            }
+            
+            .content {
+                height: 1800px;
+                padding-top: 200px;
+                background-color: #e0e0e0;
+                text-align: center;
+            }
+            
+            
+            
+        </style>
+    </head>
+    <body>
+        
+        
+        <div class="slide-down-page">
+            <a href="#" class="close btn">Close</a>
+        </div>
+        
+        <div class="content">
+            <a href="#" class="open btn">Open</a>
+        </div>
+        
+        
+        
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        
+        (function() {
+            
+            var windowH = $(window).height(),
+                documElem = $(document),
+                slideDownPage = $('.slide-down-page'),
+                content = $('.content'),
+                btns = $('.btn'),
+                animSpeed = 500;
+            
+            slideDownPage.css({
+                height: windowH + 'px',
+                top: -windowH + 'px'
+            });
+            
+            btns.on('click', function(e) {
+                if ( $(this).hasClass('open') ) {
+                    slideDownPage.animate({'top': 0}, animSpeed);
+                    content.animate({'margin-top': windowH + 'px'}, animSpeed);
+                }
+                else {
+                    slideDownPage.animate({'top': -windowH + 'px'}, animSpeed);
+                    content.animate({'margin-top': 0}, animSpeed);
+                }
+                e.preventDefault();
+            });
+            
+            documElem.on('scroll', function() {
+                if ( $(this).scrollTop() > slideDownPage.height() && slideDownPage.css('top') === '0px' ) {
+                    slideDownPage.css('top', -windowH + 'px');
+                    content.css('margin-top', 0);
+                    documElem.scrollTop(0);
+                }
+            });
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        })();
+        
+        
+    </script>
+
+    </body>
+</html>
