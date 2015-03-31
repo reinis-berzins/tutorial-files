@@ -1,0 +1,131 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-size: 0.7em;
+    font-family: Roboto, Open Sans, Arial, sans-serif;
+    background-color: #3e6b81;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.page-heading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    padding: 80px 0 40px 0;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #bfc250;
+    border-bottom: 2px solid #bfc250;
+    font-weight: 300;
+    padding: 0 5px;
+    text-indent: 0;
+    -webkit-transition: background-color 0.4s ease, color 0.4s ease;
+    -moz-transition: background-color 0.4s ease, color 0.4s ease;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+.btn:hover {
+    background-color: #bfc250;
+    color: #000;
+}
+
+.hidden-content {
+    display: none;
+    visibility: hidden;
+}
+
+
+
+/*___ ACTIVE CONTENT ___*/
+.content-box {
+    position: relative;
+    background-color: #325667;
+    padding: 10%;
+    margin-bottom: 100px;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    -moz-transition: -moz-transform 0.3s ease;
+    transition: transform 0.3s ease;
+}
+.content-box.transitionEffect {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.active-content p {
+    text-indent: 40px;
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #c8c8ff;
+    line-height: 2em;
+}
+
+.page-transition-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #325667;
+}
+
+.btn.facebook {
+    color: #3b5998;
+    border-bottom: 2px solid #3b5998;
+}
+.btn.facebook:hover {
+    background-color: #3b5998;
+    color: #000;
+}
+.btn.twitter {
+    color: #00aced;
+    border-bottom: 2px solid #00aced;
+}
+.btn.twitter:hover {
+    background-color: #00aced;
+    color: #000;
+}
+.btn.instagram {
+    color: #517fa4;
+    border-bottom: 2px solid #517fa4;
+}
+.btn.instagram:hover {
+    background-color: #517fa4;
+    color: #000;
+}
+
+
+/*___ MEDIA QUERIES ___*/
+@media only screen and (min-width: 750px) {
+    body {
+        font-size: 1em;
+    }
+}
+
+
+
+
+
+
+
+
