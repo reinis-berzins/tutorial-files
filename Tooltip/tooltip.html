@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tooltip Finished</title>
+        <style type="text/css">
+            
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .info {
+                display: block;
+                position: relative;
+                font-family: Arial;
+                width: 200px;
+                padding: 20px 0;
+                margin: 200px auto;
+                color: #000;
+                font-size: 14px;
+                text-decoration: none;
+                text-align: center;
+                text-transform: uppercase;
+                border-radius: 10px;
+                border: 1px solid #000;
+            }
+            
+            .tooltip {
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: 120%;
+                width: 190px;
+                padding: 5px;
+                border-radius: 10px;
+                background-color: #09f;
+                color: #fff;
+                line-height: normal;
+                text-transform: none;
+                font-size: 12px;
+                opacity: 0;
+                transform: scaleY(0);
+                transition: all 0.2s ease;
+            }
+            .tooltip:after {
+                position: absolute;
+                content: '';
+                left: 10px;
+                bottom: -5px;
+                width: 0;
+                height: 0;
+                border-top: 5px solid #09f;
+                border-right: 5px solid transparent;
+                border-left: 5px solid transparent;
+            }
+            .info:hover .tooltip {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+        
+        
+        <a href="#" class="info" data-tooltip-text="Here you can get extra info about something!">Hover this</a>
+        
+        
+        
+        
+        
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        
+        (function() {
+            
+            var infoElem = $('.info');
+                
+            infoElem.each(function() {
+                var self = $(this),
+                    selfTooltipText = self.data('tooltip-text');
+                if ( selfTooltipText ) $('<span/>', {class: 'tooltip', text: selfTooltipText}).appendTo(self);
+            });
+                
+            
+        })();
+        
+        
+        
+    </script>
+
+    </body>
+</html>
