@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Nav Marker</title>
+		<style type="text/css">
+
+			* {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font-family: Open Sans, sans-serif;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                background-color: #000;
+            }
+            nav ul li {
+                list-style: none;
+                display: inline-block;
+            }
+            nav ul li a {
+                display: block;
+                padding: 20px 40px;
+                text-decoration: none;
+                color: #fff;
+                transition: background-color 0.4s ease;
+            }
+            nav ul li a.active {
+                background-color: #666;
+            }
+            
+            section {
+                padding: 30% 0;
+                text-align: center;
+            }
+            
+            section.about { background-color: #888; }
+            section.team { background-color: #999; }
+            section.gallery { background-color: #aaa; }
+            section.testimonials { background-color: #bbb; }
+            section.contact { background-color: #ccc; }
+
+
+		</style>
+
+	</head>
+	<body>
+
+		
+        <nav>
+            <ul>
+                <li><a href="#" class="about-marker active">About</a></li>
+                <li><a href="#" class="team-marker">Team</a></li>
+                <li><a href="#" class="gallery-marker">Gallery</a></li>
+                <li><a href="#" class="testimonials-marker">Testimonials</a></li>
+                <li><a href="#" class="contact-marker">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <section class="about">
+            <h1>About</h1>
+        </section>
+        
+        <section class="team">
+            <h1>Team</h1>
+        </section>
+        
+        <section class="gallery">
+            <h1>Gallery</h1>
+        </section>
+        
+        <section class="testimonials">
+            <h1>Testimonials</h1>
+        </section>
+        
+        <section class="contact">
+            <h1>Contact</h1>
+        </section>
+        
+        
+        
+
+
+		
+
+
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script type="text/javascript">
+
+			(function() {
+
+                var navLinks = $('nav ul li a'),
+                    navH = $('nav').height(),
+                    section = $('section'),
+                    documentEl = $(document);
+                
+                documentEl.on('scroll', function() {
+                    var currentScrollPos = documentEl.scrollTop();
+                    
+                    section.each(function() {
+                        var self = $(this);
+                        if ( self.offset().top < (currentScrollPos + navH) && (currentScrollPos + navH) < (self.offset().top + self.outerHeight()) ) {
+                            var targetClass = '.' + self.attr('class') + '-marker';
+                            navLinks.removeClass('active');
+                            $(targetClass).addClass('active');
+                        }
+                    });
+                    
+                });
+                
+                
+                
+
+
+
+			})();
+
+
+
+
+
+
+		</script>
+
+	</body>
+</html>
