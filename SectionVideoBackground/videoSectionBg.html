@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Video Background</title>
+
+		<style type="text/css">
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				font-family: Calibri, sans-serif;
+			}
+            
+            .content-section {
+                width: 50%;
+                margin: 0 auto;
+                padding: 15% 0;
+            }
+            .content-section h1 {
+                text-transform: uppercase;
+                margin-bottom: 15px;
+            }
+            .content-section p {
+                font-size: 1.2em;
+                color: #333;
+            }
+            
+            .video-section {
+                position: relative;
+                width: 100%;
+                max-height: 550px;
+                overflow: hidden;
+            }
+            #video-elem {
+                width: 100%;
+            }
+            video::-webkit-media-controls {
+                display:none !important;
+            }
+            .video-overlay {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-color: rgba(255, 255, 255, 0.8);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            .video-overlay:hover {
+                opacity: 1;
+            }
+            .video-overlay h1 {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                text-transform: uppercase;
+                font-size: 3em;
+                color: #000;
+                text-align: center;
+            }
+            
+
+			
+		</style>
+		
+		
+	</head>
+	<body>
+		
+		<div class="content-section">
+            <h1>Video As A Background For Website Section</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget aliquam massa. Donec feugiat, tortor ac feugiat auctor, purus augue rhoncus neque, at tristique tortor urna at velit. Nullam in maximus quam. Suspendisse aliquam enim nibh, ac scelerisque justo sollicitudin eget. In sed lacinia quam, a viverra diam.</p>
+        </div>
+		
+
+		<div class="video-section">
+			<video id="video-elem" preload="auto" autoplay="true" loop="loop" muted="muted" poster="videoGIF.gif"> 
+				<source src="video.mp4" type="video/mp4">
+				Video not supported
+			</video>
+            
+            <div class="video-overlay">
+                <h1>This Is A Video Overlay</h1>
+            </div>
+		</div>
+        
+        <div class="content-section">
+            <h1>Video As A Background For Website Section</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget aliquam massa. Donec feugiat, tortor ac feugiat auctor, purus augue rhoncus neque, at tristique tortor urna at velit. Nullam in maximus quam. Suspendisse aliquam enim nibh, ac scelerisque justo sollicitudin eget. In sed lacinia quam, a viverra diam.</p>
+        </div>
+
+
+		
+		<!-- VIDEO FILE FROM http://www.videezy.com/ -->
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
