@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title</title>
+        <style type="text/css">
+            
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .audio-anim-frame {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+            
+            .audio-anim-block {
+                display: inline-block;
+                width: 8px;
+                height: 40px;
+                background-color: red;
+            }
+            
+            @keyframes first-block {
+                0% {transform: scaleY(1);}
+                25% {transform: scaleY(0.6);}
+                50% {transform: scaleY(0.4);}
+                100% {transform: scaleY(1);}
+            }
+            
+            .audio-anim-block.first-block {
+                animation-name: first-block;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+            
+            @keyframes second-block {
+                0% {transform: scaleY(1);}
+                25% {transform: scaleY(0.1);}
+                50% {transform: scaleY(0.2);}
+                100% {transform: scaleY(1);}
+            }
+            
+            .audio-anim-block.second-block {
+                animation-name: second-block;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+            
+            @keyframes third-block {
+                0% {transform: scaleY(1);}
+                25% {transform: scaleY(0.9);}
+                50% {transform: scaleY(0.2);}
+                100% {transform: scaleY(1); background-color: blue;}
+            }
+            
+            .audio-anim-block.third-block {
+                animation-name: third-block;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+        
+        <div class="audio-anim-frame">
+            <div class="audio-anim-block first-block"></div>
+            <div class="audio-anim-block second-block"></div>
+            <div class="audio-anim-block third-block"></div>
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript"></script>
+
+    </body>
+</html>
